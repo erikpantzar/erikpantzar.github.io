@@ -237,31 +237,126 @@
     </div>
 
     <div class="rider">
-        <article id="content">
-            <h2>Content and dependancies</h2>
-            <p>Content is dependant upon fetch(Fetch API) from gist content then content is converted from Markdown to HTML</p>
-        </article>
+        <article id="content"><h1 id="erikpantzar">Erik Pantzar</h1>
+
+<p>19890428-0255</p>
+
+<p>erik@epantzar.se</p>
+
+<h2 id="skills">Skills</h2>
+
+<ul>
+<li>HTML (excellent)</li>
+
+<li>CSS (excellent)</li>
+
+<li>JavaScript (very good)</li>
+
+<li>TypeScript (ok)</li>
+
+<li>Angular 1.x (excellent)</li>
+
+<li>Angular 2 (Beginner/medium no live projects)</li>
+
+<li>Node &amp; Express (ok)</li>
+
+<li>MongoDb (ok)</li>
+
+<li>MEAN (ok)</li>
+
+<li>Gulp/Webpack (good)</li>
+
+<li>Adobe Photoshop (good)</li>
+
+<li>Adobe Illustrator (good)</li>
+
+<li>Sketch (good)</li>
+
+<li>UX design (good)</li>
+
+<li>UI design (good)</li>
+
+<li>Git (very good)</li>
+
+<li>TFS (ok)</li>
+
+<li>Agile, Waterfall and Chaos (good)</li>
+
+<li>TDD (ok)</li>
+
+<li>Jasmine (ok) </li>
+
+<li>Protractor (Beginner)</li>
+
+<li>Fluent in english and swedish</li>
+</ul>
+
+<h2 id="aboutme">About me</h2>
+
+<p>I started my web career as a Wordpress builder, then as time went I learnt more and more and now I am trying to learn and build everything possible with Javascript and the JS stack "MEAN" (mongo, node, express etc). Mostly I just want to be a good programmer and be good at Javascript, then in second hand comes the actual frameworks.</p>
+
+<p>I am teaching my colleagues and trying to get everyone up to speed on es6 and the <strong>component architectures</strong> that the new JS frameworks bring (Already implemented in angular1.5+ also react).</p>
+
+<p>I really like design, animations, interactions and UX but my main strive, and the thing I am currently teaching myself is just Javascript. I am quite fluent and have been working a very long time with HTML and CSS and intend keeping on doing just that.</p>
+
+<p>I live with my girlfriend and two daughters (Leia 4 &amp; Mila 2) in Bagarmossen, close to both nature and subway!</p>
+
+<h2 id="jobs">Jobs</h2>
+
+<h3 id="magic2015">Magic 2015 -</h3>
+
+<h4 id="frontenddeveloper">Front-end developer</h4>
+
+<p>At <a href="http://magicbyistone.se">Magic</a> I built things ranging from internal apps for having fun at internal conference to large angular applications. </p>
+
+<p>The people and the department I am in, our main focus is user-experience that is what brought me here. I really like building good looking and easy too use applications. With the help of Javascript and CSS I can build nice interactions and animations to help the users navigate and interact with our products. The interactivity and animation part of the web is what I find the most fun and rewarding. </p>
+
+<hr>
+
+<h3 id="celebrationstudios20122015">Celebration Studios 2012-2015</h3>
+
+<h4 id="webdeveloper">Webdeveloper</h4>
+
+<p>At <a href="http://celebrationstudios.se">Celebration</a> I built responsive communication and commerce sites using mostly Wordpress and Litium.</p>
+
+<hr>
+
+<h3 id="wtmglsahlin20102012">WTMG/LSahlin 2010-2012</h3>
+
+<h4 id="webdeveloper-1">Webdeveloper</h4>
+
+<p>The biggest project during my time at <a href="http://wtmg.se">WTMG</a> was as a consultat for a big mobile-advertisement agency, I did all their customers campaign landing sites and helped develop their own webpage.</p>
+
+<hr>
+
+<h2 id="education">Education</h2>
+
+<h3 id="c3lwebdeveloperwithfocusonria20092010">C3L - Webdeveloper with focus on RIA 2009-2010</h3>
+
+<p>Did a two semester education in a school called C3L. It was very inspiring for me, and it was what ignited the idea and drive for me to become a webdeveloper.</p>
+
+<p>The main topics were:</p>
+
+<ul>
+<li>HTML, CSS, JavaScript (3 weeks total)</li>
+
+<li>Adobe Photoshop, Illustrator, Fireworks (3 weeks total)</li>
+
+<li>Flash, AS2 &amp; AS3 (3 weeks)</li>
+
+<li>Flex (AS3 and flash technology)</li>
+
+<li>Java (8-12 weeks with exam project)</li>
+</ul>
+
+<h3 id="gymnasiumhighschool">Gymnasium/Highschool</h3>
+
+<ul>
+<li>Tyresö Gymnasium: Teknik: Design &amp; Productdevelopment 2yrs</li>
+
+<li>Thorildsplan: Teknik: Programming &amp; Networking (CCNA, Cisco) 1yrs</li>
+</ul></article>
     </div>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.2/showdown.min.js" charset="utf-8"></script>
-<script>
-    const content_url = "https://gist.githubusercontent.com/erikpantzar/af5dcd5d6a08e3e31314390d52ed535b/raw/9f30d1cc6434e1315ac46409ee9a1e6d7f336ad4/cv.md";
-    const converter = new showdown.Converter();
-
-    let body = "";
-    let content = document.getElementById('content');
-
-    fetch(content_url).then(function(res) {
-        return res.text();
-    }).then(function(res_text) {
-        let html = converter.makeHtml(res_text);
-        content.innerHTML = html;
-    });
-</script>
 
 </body>
 </html>
