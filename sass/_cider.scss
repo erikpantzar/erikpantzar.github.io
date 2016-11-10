@@ -1,0 +1,42 @@
+$cider-bg: #fafafa;
+$header-height: 161px;
+
+.cider {
+  width: 300px;
+  position: relative;
+  background: darken($cider-bg, 4%);
+  height: calc(100vh - #{$header-height} - 44px;
+  padding-top: $header-height + 44;
+
+  &__header {
+      padding: 15px 10px;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      height: $header-height;
+      bottom: calc(100% - #{$header-height} - 44px);
+      transition: all 300ms ease-in-out;
+      width: 100%;
+    }
+
+    &__title { margin: 10px 0 10px; }
+    &__content { margin: 0; }
+}
+
+.new .cider {
+  padding-top: 44px;
+  transition: padding 500ms ease-in-out;
+  height: calc(100vh - 44px;
+}
+
+.new .cider__header {
+  bottom: 170px;
+  transition: all 500ms ease-in-out;
+}
+
+.new .hero {
+  bottom: 3%;
+  left: 9px;
+  transform: scale(0.65);
+  transition: all 500ms ease-in-out;
+}

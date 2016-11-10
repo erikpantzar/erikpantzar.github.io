@@ -1,0 +1,80 @@
+$cider-bg: #fafafa;
+$header-height: 161px;
+
+.highlight {
+  background: darken($cider-bg, 10%);
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  padding: 36px 25px;
+  position: relative;
+  height: 100px;
+  overflow-y: hidden;
+  transition: background 300ms ease-in, color 300ms ease-in;
+  color: invert($cider-bg);
+
+  &:hover {
+    background: darken($cider-bg, 13%);
+    transition: background 100ms ease-out,
+      color 100ms ease-out,
+      fill 100ms ease-out,;
+  }
+
+  .icon {
+    display: block;
+    width: 20px;
+    height: 36px;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+
+  &__title {
+    transition: transform 300ms ease-in;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  &__content {
+    pointer-events: none;
+    transform: translateY(130%);
+    transition: transform 400ms ease-in,
+      opacity 200ms ease-in;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .2;
+    margin: 0;
+  }
+
+  &:hover &__content {
+    display: block;
+    transform: translateY(-80%);
+    opacity: 1;
+    transition: transform 200ms 50ms ease-out,
+      opacity 200ms 50ms ease-out;
+  }
+
+  &:hover &__title {
+    transform: translateY(-40%);
+    transition: transform 300ms ease-out;
+  }
+
+  &:active {
+    background: lighten($cider-bg, 1%);
+  }
+}
+
+
+@for $i from 0 through 4 {
+    .highlight:nth-child(#{$i}) {
+      background: darken($cider-bg, 4% * $i);
+
+      &:hover {
+        background: invert($cider-bg);
+        color: $cider-bg;
+        fill: $cider-bg;
+      }
+    }
+}

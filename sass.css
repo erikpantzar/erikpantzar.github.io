@@ -1,0 +1,203 @@
+body {
+  background: #fff;
+  color: #111;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  font-size: 1em;
+  color: #555; }
+
+.logo {
+  background: #000;
+  color: #fff;
+  width: 32px;
+  height: 30px;
+  display: inline-block;
+  margin: 0 0 1em;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  border-bottom: 2px solid #ddd; }
+
+h1, h2, h3 {
+  margin: 1em 0 .5em;
+  font-size: 1.5em; }
+
+h3 {
+  margin: 1.5em 0 0.2em;
+  font-size: 1.2em; }
+
+p {
+  margin: 0 0 1em;
+  font-size: 1em; }
+
+.logo {
+  background: #000;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  line-height: 44px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-decoration: none; }
+
+.cider {
+  width: 300px;
+  position: relative;
+  background: #f0f0f0;
+  height: calc(100vh - 161px - 44px);
+  padding-top: 205px; }
+  .cider__header {
+    padding: 15px 10px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    height: 161px;
+    bottom: calc(100% - 161px - 44px);
+    transition: all 300ms ease-in-out;
+    width: 100%; }
+  .cider__title {
+    margin: 10px 0 10px; }
+  .cider__content {
+    margin: 0; }
+
+.new .cider {
+  padding-top: 44px;
+  transition: padding 500ms ease-in-out;
+  height: calc(100vh - 44px); }
+
+.new .cider__header {
+  bottom: 170px;
+  transition: all 500ms ease-in-out; }
+
+.new .hero {
+  bottom: 3%;
+  left: 9px;
+  transform: scale(0.65);
+  transition: all 500ms ease-in-out; }
+
+.highlight {
+  background: #e1e1e1;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  padding: 36px 25px;
+  position: relative;
+  height: 100px;
+  overflow-y: hidden;
+  transition: background 300ms ease-in, color 300ms ease-in;
+  color: #050505; }
+  .highlight:hover {
+    background: #d9d9d9;
+    transition: background 100ms ease-out, color 100ms ease-out, fill 100ms ease-out; }
+  .highlight .icon {
+    display: block;
+    width: 20px;
+    height: 36px;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 0; }
+  .highlight__title {
+    transition: transform 300ms ease-in;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    pointer-events: none; }
+  .highlight__content {
+    pointer-events: none;
+    transform: translateY(130%);
+    transition: transform 400ms ease-in, opacity 200ms ease-in;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .2;
+    margin: 0; }
+  .highlight:hover .highlight__content {
+    display: block;
+    transform: translateY(-80%);
+    opacity: 1;
+    transition: transform 200ms 50ms ease-out, opacity 200ms 50ms ease-out; }
+  .highlight:hover .highlight__title {
+    transform: translateY(-40%);
+    transition: transform 300ms ease-out; }
+  .highlight:active {
+    background: #fdfdfd; }
+
+.highlight:nth-child(0) {
+  background: #fafafa; }
+  .highlight:nth-child(0):hover {
+    background: #050505;
+    color: #fafafa;
+    fill: #fafafa; }
+
+.highlight:nth-child(1) {
+  background: #f0f0f0; }
+  .highlight:nth-child(1):hover {
+    background: #050505;
+    color: #fafafa;
+    fill: #fafafa; }
+
+.highlight:nth-child(2) {
+  background: #e6e6e6; }
+  .highlight:nth-child(2):hover {
+    background: #050505;
+    color: #fafafa;
+    fill: #fafafa; }
+
+.highlight:nth-child(3) {
+  background: #dbdbdb; }
+  .highlight:nth-child(3):hover {
+    background: #050505;
+    color: #fafafa;
+    fill: #fafafa; }
+
+.highlight:nth-child(4) {
+  background: #d1d1d1; }
+  .highlight:nth-child(4):hover {
+    background: #050505;
+    color: #fafafa;
+    fill: #fafafa; }
+
+.rider {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 300px;
+  width: calc(100% - 250px);
+  min-height: 100%; }
+
+.hero {
+  position: fixed;
+  bottom: 50%;
+  left: calc(50% + 140px);
+  transform: translate(-50%, 50%);
+  transition: all 300ms ease-in-out; }
+
+.new .hero {
+  bottom: 3%;
+  left: 9px;
+  transform: scale(0.65);
+  transition: all 500ms ease-in-out; }
+
+.burg {
+  fill: #aaa;
+  stroke: #aaa; }
+
+.hero svg {
+  width: 200px;
+  animation: rotation 4s linear infinite; }
+
+@keyframes rotation {
+  0% {
+    transform: rotateY(0deg) translateX(-50px) rotateZ(5deg) rotateX(-5deg); }
+  100% {
+    transform: rotateY(360deg) translateX(-50px) rotateZ(5deg) rotateX(5deg); } }
