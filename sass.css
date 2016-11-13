@@ -46,17 +46,23 @@ p {
   font-size: 18px;
   line-height: 44px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   text-decoration: none; }
 
 .cider {
-  width: 300px;
-  position: relative;
+  width: 100%;
   background: #f0f0f0;
-  height: calc(100vh - 161px - 44px);
   padding-top: 205px; }
+  @media (min-width: 768px) {
+    .cider {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      width: 300px;
+      height: 100%; } }
   .cider__header {
     padding: 15px 10px;
     box-sizing: border-box;
@@ -73,17 +79,20 @@ p {
 
 .new .cider {
   padding-top: 44px;
-  transition: padding 500ms ease-in-out;
-  height: calc(100vh - 44px); }
+  transition: padding 500ms ease-in-out; }
 
 .new .cider__header {
-  bottom: 170px;
+  bottom: 230px;
   transition: all 500ms ease-in-out; }
+
+.new .cider__nav {
+  transition: transform 550ms ease-in-out;
+  transform: translateY(300%); }
 
 .new .hero {
   bottom: 3%;
   left: 9px;
-  transform: scale(0.65);
+  transform: scale(0.55);
   transition: all 500ms ease-in-out; }
 
 .highlight {
@@ -169,18 +178,36 @@ p {
 
 .rider {
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 300px;
-  width: calc(100% - 250px);
-  min-height: 100%; }
+  padding: 20px;
+  box-sizing: border-box; }
+  @media (min-width: 768px) {
+    .rider {
+      position: relative;
+      top: 0;
+      left: 300px;
+      width: calc(100% - 300px);
+      min-height: 100%;
+      opacity: 0.8;
+      transform: translateX(100%);
+      animation: slideIn 400ms 50ms ease-out;
+      animation-fill-mode: forwards; } }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
 
 .hero {
-  position: fixed;
-  bottom: 50%;
-  left: calc(50% + 140px);
-  transform: translate(-50%, 50%);
-  transition: all 300ms ease-in-out; }
+  padding: 2em 0 2em 4em; }
+  @media (min-width: 768px) {
+    .hero {
+      margin: 0;
+      position: fixed;
+      bottom: 50%;
+      padding: 0;
+      left: calc(50% + 140px);
+      transform: translate(-50%, 50%);
+      transition: all 300ms ease-in-out; } }
 
 .new .hero {
   bottom: 3%;

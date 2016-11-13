@@ -2,11 +2,18 @@ $cider-bg: #fafafa;
 $header-height: 161px;
 
 .cider {
-  width: 300px;
-  position: relative;
+  width: 100%;
   background: darken($cider-bg, 4%);
-  height: calc(100vh - #{$header-height} - 44px;
-  padding-top: $header-height + 44;
+  padding-top: $header-height + 44px;
+
+  @media (min-width: 768px) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+  }
 
   &__header {
       padding: 15px 10px;
@@ -26,17 +33,21 @@ $header-height: 161px;
 .new .cider {
   padding-top: 44px;
   transition: padding 500ms ease-in-out;
-  height: calc(100vh - 44px;
 }
 
 .new .cider__header {
-  bottom: 170px;
+  bottom: 230px;
   transition: all 500ms ease-in-out;
+}
+
+.new .cider__nav {
+  transition: transform 550ms ease-in-out;
+  transform: translateY(300%);
 }
 
 .new .hero {
   bottom: 3%;
   left: 9px;
-  transform: scale(0.65);
+  transform: scale(0.55);
   transition: all 500ms ease-in-out;
 }

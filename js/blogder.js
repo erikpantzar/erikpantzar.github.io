@@ -8,6 +8,8 @@ export function blogder() {
 
         reqwest(event.target.href, function(response) {
           handleResponse(response);
+
+          history.pushState(null, null, event.target.href);
         });
 
         body.classList.toggle('new');
@@ -15,14 +17,15 @@ export function blogder() {
     }
 }
 
-
 function handleResponse(response) {
   // make a goalie
   const goalie = document.createElement('div');
   goalie.innerHTML = response;
 
-  let main = document.querySelector('main');
-  main.classList.add('rider--sunset');
+  const main = document.querySelector('main');
+  if(main !== null) {
+    main.classList.add('rider--sunset');
+  }
 
   // add the new thing to the ain
   const targeter = document.createElement('main');
@@ -32,8 +35,10 @@ function handleResponse(response) {
   targeter.appendChild(targetContent);
   document.body.appendChild(targeter);
 
-  // dp cleanup
-  window.setTimeout(()=> {
-    main.parentNode.removeChild(main);
-  }, 400);
+  if(main !== null) {
+    // dp cleanup
+    window.setTimeout(()=> {
+      main.parentNode.removeChild(main);
+    }, 400);
+  }
 }
