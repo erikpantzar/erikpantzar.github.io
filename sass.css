@@ -14,18 +14,6 @@ a {
   font-size: 1em;
   color: #555; }
 
-.logo {
-  background: #000;
-  color: #fff;
-  width: 32px;
-  height: 30px;
-  display: inline-block;
-  margin: 0 0 1em;
-  font-size: 18px;
-  line-height: 32px;
-  text-align: center;
-  border-bottom: 2px solid #ddd; }
-
 h1, h2, h3 {
   margin: 1em 0 .5em;
   font-size: 1.5em; }
@@ -61,7 +49,7 @@ p {
       left: 0;
       bottom: 0;
       top: 0;
-      width: 300px;
+      width: 260px;
       height: 100%; } }
   .cider__header {
     padding: 15px 10px;
@@ -100,7 +88,7 @@ p {
   box-sizing: border-box;
   display: block;
   text-decoration: none;
-  padding: 36px 25px;
+  padding: 36px 15px;
   position: relative;
   height: 100px;
   overflow-y: hidden;
@@ -121,15 +109,24 @@ p {
     font-size: 24px;
     line-height: 36px;
     margin: 0;
-    pointer-events: none; }
+    pointer-events: none;
+    transform: translateY(-40%);
+    transition: transform 300ms ease-out; }
+    @media (min-width: 769px) {
+      .highlight__title {
+        transform: translateY(0); } }
   .highlight__content {
     pointer-events: none;
-    transform: translateY(130%);
     transition: transform 400ms ease-in, opacity 200ms ease-in;
     font-size: 14px;
     line-height: 24px;
-    opacity: .2;
-    margin: 0; }
+    margin: 0;
+    transform: translateY(-80%);
+    opacity: 1; }
+    @media (min-width: 769px) {
+      .highlight__content {
+        transform: translateY(130%);
+        opacity: .2; } }
   .highlight:hover .highlight__content {
     display: block;
     transform: translateY(-80%);
