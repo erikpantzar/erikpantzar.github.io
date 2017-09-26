@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/epantzar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://epantzar.se
+  * I am epantzar (https://keybase.io/epantzar) on keybase.
+  * I have a public key ASDZkYi-1HmkVG_rS0V8P5WK2bT4A8bsNquP_nSBgSnwKQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d99188bed479a4546feb4b457c3f958ad9b4f803c6ec36ab8ffe74818129f0290a",
+      "host": "keybase.io",
+      "kid": "0120d99188bed479a4546feb4b457c3f958ad9b4f803c6ec36ab8ffe74818129f0290a",
+      "uid": "bb8e87ca48adb59158fcf9f5b43fb419",
+      "username": "epantzar"
+    },
+    "merkle_root": {
+      "ctime": 1506448085,
+      "hash": "dffe92caf4dcea723b4bcd5b822937f9b3d9a4db7f9c31eb9bfa35f7e7717ff9ce3be159febfffaa61e7fd1f3be178d1bc45832f70b5300b2f40e5510d87cb3a",
+      "hash_meta": "1c85a7369e19beaaa2517717c8c9a355ed12c5b537764660002c11d953699413",
+      "seqno": 1460360
+    },
+    "service": {
+      "hostname": "epantzar.se",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.31"
+  },
+  "ctime": 1506448094,
+  "expire_in": 504576000,
+  "prev": "971d04e21f04e6e4b75736710c70ef08787b249e7719de1ca24d9476f5a69be3",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg2ZGIvtR5pFRv60tFfD+Vitm0+APG7Darj/50gYEp8CkKp3BheWxvYWTFA0N7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZDk5MTg4YmVkNDc5YTQ1NDZmZWI0YjQ1N2MzZjk1OGFkOWI0ZjgwM2M2ZWMzNmFiOGZmZTc0ODE4MTI5ZjAyOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZDk5MTg4YmVkNDc5YTQ1NDZmZWI0YjQ1N2MzZjk1OGFkOWI0ZjgwM2M2ZWMzNmFiOGZmZTc0ODE4MTI5ZjAyOTBhIiwidWlkIjoiYmI4ZTg3Y2E0OGFkYjU5MTU4ZmNmOWY1YjQzZmI0MTkiLCJ1c2VybmFtZSI6ImVwYW50emFyIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTA2NDQ4MDg1LCJoYXNoIjoiZGZmZTkyY2FmNGRjZWE3MjNiNGJjZDViODIyOTM3ZjliM2Q5YTRkYjdmOWMzMWViOWJmYTM1ZjdlNzcxN2ZmOWNlM2JlMTU5ZmViZmZmYWE2MWU3ZmQxZjNiZTE3OGQxYmM0NTgzMmY3MGI1MzAwYjJmNDBlNTUxMGQ4N2NiM2EiLCJoYXNoX21ldGEiOiIxYzg1YTczNjllMTliZWFhYTI1MTc3MTdjOGM5YTM1NWVkMTJjNWI1Mzc3NjQ2NjAwMDJjMTFkOTUzNjk5NDEzIiwic2Vxbm8iOjE0NjAzNjB9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiZXBhbnR6YXIuc2UiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjMxIn0sImN0aW1lIjoxNTA2NDQ4MDk0LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6Ijk3MWQwNGUyMWYwNGU2ZTRiNzU3MzY3MTBjNzBlZjA4Nzg3YjI0OWU3NzE5ZGUxY2EyNGQ5NDc2ZjVhNjliZTMiLCJzZXFubyI6MTEsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAImHU2oqG8y/yJaa/ox/oDM1t68DS6gUeTsI2f17O4eAzvxhlXZNvey0iBRN2ly/2gOb11NJJasdLkTlfi75vAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPgGVB6JjjjbN01xXh4/QwAkzChN+HxTGMNCRcMRhjz3o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/epantzar
+
+==================================================================
