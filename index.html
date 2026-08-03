@@ -24,22 +24,26 @@
         --dim: #84878f;
       }
     }
-    html { background: var(--bg); color: var(--fg); }
+    html { background: var(--bg); color: var(--fg); overflow-x: hidden; }
     body {
       min-height: 100svh;
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       font-family: 'Press Start 2P', monospace;
       text-align: center;
-      padding: 32px 16px;
+      overflow-x: hidden;
     }
     main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 26px;
       max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 16px;
     }
     #art {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -72,7 +76,18 @@
       padding-bottom: 4px;
     }
     nav a:hover { color: var(--dim); border-color: var(--dim); }
-    .worked { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+
+    .worked {
+      position: sticky;
+      bottom: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 26px;
+      padding: 10px 12px calc(14px + 10svh);
+      background: var(--bg);
+    }
     .worked h2 {
       font-size: 8px;
       color: var(--dim);
@@ -82,21 +97,59 @@
     }
     .logos {
       display: flex;
-      gap: 14px;
+      width: 100%;
+      gap: 28px;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       list-style: none;
+      max-width: 900px;
     }
     .logos li {
-      font-size: 8px;
-      line-height: 1;
-      border: 2px solid var(--fg);
-      padding: 9px 11px;
-      box-shadow: 3px 3px 0 var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      opacity: 0;
+      animation: logo-in 0.6s ease-out forwards;
+      animation-delay: calc(var(--i) * 80ms + 200ms);
     }
-    footer { font-size: 8px; color: var(--dim); margin-top: 6px; }
+    .logos li[hidden] { display: none; }
+    .logos svg {
+      width: 31px;
+      height: 31px;
+      overflow: visible;
+    }
+    .logos li.wide svg { width: auto; height: 24px; }
+    .logos li.bonnier text { fill: var(--fg); }
+
+    @keyframes logo-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       h1::after { animation: none; }
+      .logos li { animation: none; opacity: 1; }
+    }
+
+    /* Phones: shrink marks and tighten gaps so the row wraps cleanly
+       instead of crowding the viewport. */
+    @media (max-width: 640px) {
+      .worked { padding: 8px 8px calc(10px + 10svh); }
+      .logos { gap: 20px; }
+      .logos svg { width: 23px; height: 23px; }
+      .logos li.wide svg { width: auto; height: 18px; }
+    }
+    @media (max-width: 360px) {
+      .logos svg { width: 20px; height: 20px; }
+      .logos li.wide svg { width: auto; height: 16px; }
+    }
+
+    /* Big screens: give the row more breathing room and slightly larger marks. */
+    @media (min-width: 1200px) {
+      .logos svg { width: 34px; height: 34px; }
+      .logos li.wide svg { width: auto; height: 29px; }
     }
   </style>
 </head>
@@ -110,22 +163,81 @@
   <nav>
     <a href="https://github.com/erikpantzar">github</a>
     <a href="https://www.linkedin.com/in/erikpantzar">linkedin</a>
-    <a href="https://x.com/epantzar">x</a>
+    <a href="https://x.com/epantzar">twitter</a>
   </nav>
-
-  <section class="worked">
-    <h2>worked at</h2>
-    <!-- To swap a text chip for a real logo, replace the <li> text with an inline
-         <svg> (use currentColor for fills so it works in light + dark mode). -->
-    <ul class="logos">
-      <li>TENEO.AI</li>
-      <li>CAUSALITY</li>
-      <li>SIGMA TECHNOLOGY</li>
-    </ul>
-  </section>
-
-  <footer>stockholm, sweden</footer>
 </main>
+
+<section class="worked">
+  <h2>worked with</h2>
+  <ul class="logos">
+    <li title="Teneo.ai" hidden>
+      <svg viewBox="0 0 32 32" aria-label="Teneo.ai">
+        <rect width="32" height="32" rx="8" fill="#2F286E"/>
+        <path d="M10 10h12M16 10v9a3 3 0 0 0 3 3h1" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+    </li>
+    <li title="Causality" hidden>
+      <svg viewBox="0 0 32 32" aria-label="Causality">
+        <rect width="32" height="32" rx="8" fill="#000"/>
+        <text x="16" y="21.5" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="14" fill="#fff" text-anchor="middle">CA</text>
+      </svg>
+    </li>
+    <li title="Sigma Technology" style="--i:0">
+      <svg viewBox="0 0 32 32" aria-label="Sigma Technology">
+        <ellipse cx="16" cy="16" rx="6.5" ry="10" fill="#ED1C24" transform="rotate(45 16 16)"/>
+        <ellipse cx="16" cy="16" rx="6.5" ry="10" fill="#8f1116" transform="rotate(-45 16 16)"/>
+      </svg>
+    </li>
+    <li title="Atlas Copco" style="--i:1">
+      <svg viewBox="0 0 32 32" aria-label="Atlas Copco">
+        <rect width="32" height="32" rx="4" fill="#0092BC"/>
+        <rect x="5" y="10.5" width="22" height="1.8" fill="#fff"/>
+        <text x="16" y="21.5" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="11" fill="#fff" text-anchor="middle">AC</text>
+        <rect x="5" y="21.5" width="22" height="1.8" fill="#fff"/>
+      </svg>
+    </li>
+    <li title="Inera" hidden>
+      <svg viewBox="0 0 32 32" aria-label="Inera">
+        <rect width="32" height="32" rx="8" fill="#F9F6F1"/>
+        <path d="M6 22a14 10 0 0 1 20 0" fill="none" stroke="#A33662" stroke-width="3.2" stroke-linecap="round"/>
+      </svg>
+    </li>
+    <li title="Dazy" hidden>
+      <svg viewBox="0 0 32 32" aria-label="Dazy">
+        <rect width="32" height="32" rx="4" fill="#101011"/>
+        <text x="16" y="21" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="11" letter-spacing="0.5" fill="#fff" text-anchor="middle">DZ</text>
+      </svg>
+    </li>
+    <li title="Jayway" style="--i:2">
+      <svg viewBox="0 0 32 32" aria-label="Jayway">
+        <circle cx="16" cy="16" r="16" fill="#EF3E4A"/>
+        <text x="15.5" y="21.5" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#fff" text-anchor="middle">d+</text>
+      </svg>
+    </li>
+    <li title="Bonnier Business Media" class="wide bonnier" style="--i:3">
+      <svg viewBox="0 0 60 32" aria-label="Bonnier Business Media">
+        <text x="30" y="20" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12" letter-spacing="0.5" text-anchor="middle">BONNIER</text>
+        <text x="30" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="5" text-anchor="middle">Business Media</text>
+      </svg>
+    </li>
+    <li title="Magic by iStone" style="--i:4">
+      <svg viewBox="0 0 32 32" aria-label="Magic by iStone">
+        <text x="16" y="21" font-family="'Segoe Script','Brush Script MT',cursive" font-size="15" fill="#2CB79A" text-anchor="middle">magic</text>
+      </svg>
+    </li>
+    <li title="1177" style="--i:5">
+      <svg viewBox="0 0 32 32" aria-label="1177">
+        <rect width="32" height="32" rx="6" fill="#C12143"/>
+        <text x="16" y="22" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="13" fill="#fff" text-anchor="middle">1177</text>
+      </svg>
+    </li>
+    <li title="Telia" style="--i:6">
+      <svg viewBox="0 0 32 32" aria-label="Telia">
+        <path d="M16 5c5 0 9.5 3.7 10.8 8.6 1.1 4.1-.6 8.3-4.2 10.7-3.9 2.6-9 2.6-12.9-.2-3.4-2.5-4.9-6.7-3.7-10.7C7.2 9 11.2 5 16 5z" fill="#990AE3"/>
+      </svg>
+    </li>
+  </ul>
+</section>
 
 <script>
 (() => {
