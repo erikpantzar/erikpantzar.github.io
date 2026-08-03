@@ -85,7 +85,7 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      padding: 10px 12px 14px;
+      padding: 10px 12px calc(14px + 10svh);
       background: var(--bg);
     }
     .worked h2 {
@@ -98,7 +98,7 @@
     .logos {
       display: flex;
       width: 100%;
-      gap: 16px;
+      gap: 28px;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
@@ -113,11 +113,11 @@
     }
     .logos li[hidden] { display: none; }
     .logos svg {
-      width: 26px;
-      height: 26px;
+      width: 31px;
+      height: 31px;
       overflow: visible;
     }
-    .logos li.wide svg { width: auto; height: 20px; }
+    .logos li.wide svg { width: auto; height: 24px; }
     .logos li.bonnier text { fill: var(--fg); }
 
     footer { font-size: 8px; color: var(--dim); padding: 6px 0 4px; }
@@ -128,20 +128,20 @@
     /* Phones: shrink marks and tighten gaps so the row wraps cleanly
        instead of crowding the viewport. */
     @media (max-width: 640px) {
-      .worked { gap: 6px; padding: 8px 8px 10px; }
-      .logos { gap: 12px; }
-      .logos svg { width: 19px; height: 19px; }
-      .logos li.wide svg { width: auto; height: 15px; }
+      .worked { gap: 6px; padding: 8px 8px calc(10px + 10svh); }
+      .logos { gap: 20px; }
+      .logos svg { width: 23px; height: 23px; }
+      .logos li.wide svg { width: auto; height: 18px; }
     }
     @media (max-width: 360px) {
-      .logos svg { width: 17px; height: 17px; }
-      .logos li.wide svg { width: auto; height: 13px; }
+      .logos svg { width: 20px; height: 20px; }
+      .logos li.wide svg { width: auto; height: 16px; }
     }
 
     /* Big screens: give the row more breathing room and slightly larger marks. */
     @media (min-width: 1200px) {
-      .logos svg { width: 28px; height: 28px; }
-      .logos li.wide svg { width: auto; height: 24px; }
+      .logos svg { width: 34px; height: 34px; }
+      .logos li.wide svg { width: auto; height: 29px; }
     }
   </style>
 </head>
@@ -155,12 +155,12 @@
   <nav>
     <a href="https://github.com/erikpantzar">github</a>
     <a href="https://www.linkedin.com/in/erikpantzar">linkedin</a>
-    <a href="https://x.com/epantzar">x</a>
+    <a href="https://x.com/epantzar">twitter</a>
   </nav>
 </main>
 
 <section class="worked">
-  <h2>worked at</h2>
+  <h2>worked with</h2>
   <ul class="logos">
     <li title="Teneo.ai" hidden>
       <svg viewBox="0 0 32 32" aria-label="Teneo.ai">
