@@ -207,7 +207,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
     }
 :where(.landing-page) nav a:hover { color: var(--dim); border-color: var(--dim); }
 :where(.landing-page) .site-nav { position: absolute; top: 18px; right: clamp(16px, 4vw, 48px); z-index: 2; }
-:where(.landing-page) .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 2px; border: 0; }
+:where(.landing-page) .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 2px; border: 0; gap: 8px; line-height: 1.7; text-align: right; max-width: calc(100vw - 32px); }
 :where(.landing-page) .site-nav a:focus-visible { outline: 2px solid var(--fg); outline-offset: 5px; }
 :where(.landing-page) .worked {
       position: sticky;
@@ -312,12 +312,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
 }
 .masthead nav { color: inherit; }
 .masthead a:hover { text-decoration: underline; text-underline-offset: 6px; }
-.masthead .ai-notice {
-  margin: 12px 0 0;
-  color: var(--dim, var(--muted));
-  font: 13px/1.6 system-ui, sans-serif;
-  max-width: 650px;
-}
+
 @media (max-width: 480px) {
   .masthead { padding: 16px 20px; font-size: 9px; }
   .masthead-row { gap: 16px; }
