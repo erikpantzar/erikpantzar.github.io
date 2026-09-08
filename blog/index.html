@@ -1,55 +1,176 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="article-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Notes on design, AI, and building useful products by Erik Pantzar.">
-  <meta name="color-scheme" content="light dark">
-  <title>Blog · Erik Pantzar</title>
+  <meta name="description" content="A practical UX and UI guide to AI-driven web applications: coherent interfaces, agent workflows, testing, guardrails, voice, and accessibility.">
+  <meta name="author" content="Erik Pantzar">
+  <meta name="color-scheme" content="light">
+  <title>Designing AI web applications people can understand · Erik Pantzar</title>
   <link rel="canonical" href="https://erikpantzar.github.io/blog/">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <style>
-    :root { --bg: #f4f1ea; --fg: #191919; --dim: #655f57; --line: #d5d0c6; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.7 system-ui, sans-serif; }
-    a { color: inherit; text-underline-offset: .25em; }
-    a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
-    .skip { position: absolute; top: -100px; left: 24px; background: var(--bg); padding: 12px; }
-    .skip:focus { top: 12px; }
-    .masthead { max-width: 1120px; margin: auto; padding: 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; font: 13px/1.5 ui-monospace, monospace; }
-    .masthead a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
-    .masthead nav { color: var(--dim); }
-    main { max-width: 900px; margin: auto; padding: clamp(48px, 9vw, 112px) 24px 100px; }
-    .eyebrow, .meta, .read { font: 12px/1.7 ui-monospace, monospace; }
-    .eyebrow { color: var(--dim); letter-spacing: .13em; text-transform: uppercase; }
-    h1 { font: normal clamp(56px, 10vw, 88px)/1.1 Georgia, serif; letter-spacing: -.05em; margin: 18px 0; }
-    .intro { color: var(--dim); font-size: 20px; max-width: 510px; margin: 0 0 64px; }
-    article { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 32px 0 38px; }
-    .meta { color: var(--dim); display: flex; flex-wrap: wrap; gap: 8px 24px; }
-    h2 { font: normal clamp(29px, 5vw, 42px)/1.2 Georgia, serif; letter-spacing: -.025em; max-width: 680px; margin: 20px 0 16px; }
-    h2 a { text-decoration: none; }
-    h2 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
-    article p { color: var(--dim); max-width: 650px; margin-bottom: 24px; }
-    .read { display: inline-flex; min-height: 44px; align-items: center; }
-    footer { max-width: 1120px; margin: auto; padding: 24px; color: var(--dim); font: 12px/1.7 ui-monospace, monospace; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #0c0d10; --fg: #e6e4de; --dim: #a3a5ad; --line: #33363e; } }
-    @media (max-width: 480px) { .intro { margin-bottom: 40px; } }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="masthead"><a href="/">erik pantzar</a><nav aria-label="Main navigation"><a href="/blog/" aria-current="page">blog</a></nav></header>
-  <main id="main">
-    <p class="eyebrow">Notes &amp; perspectives</p>
-    <h1>Blog</h1>
-    <p class="intro">On design, AI, and building products that help people get things done.</p>
-    <article aria-labelledby="first-post">
-      <div class="meta"><time datetime="2026-09-08">September 8, 2026</time><span>UX / UI / AI products</span></div>
-      <h2 id="first-post"><a href="/blog/designing-ai-web-applications/">Designing AI web applications people can understand</a></h2>
-      <p>Practical angles for turning powerful AI capabilities into coherent interfaces—and helping people build, test, and improve customer conversations with confidence.</p>
-      <a class="read" href="/blog/designing-ai-web-applications/">Read article <span aria-hidden="true">&nbsp;↗</span></a>
-    </article>
-  </main>
-  <footer>Erik Pantzar · Design notes</footer>
+<a class="skip" href="#article">Skip to article</a>
+<header class="masthead">
+    <div class="masthead-row"><a href="/" rel="author">Erik Pantzar</a><nav aria-label="Main navigation"><a href="/blog/">Blog</a></nav></div>
+    <p class="ai-notice">A note on authorship: most content on this blog is likely AI-generated.</p>
+  </header>
+<main id="article">
+<article aria-labelledby="article-title">
+<header class="hero">
+  <p class="ai-tag"><span aria-hidden="true">✦</span> AI-generated article</p>
+  <p class="eyebrow">UX · UI · AI products</p>
+  <h1 id="article-title">Designing AI web applications people can understand</h1>
+  <p class="standfirst">Practical angles for turning powerful AI capabilities into coherent interfaces—and helping people build, test, and improve customer conversations with confidence.</p>
+  <p class="byline">Erik Pantzar <span aria-hidden="true"> / </span> <time datetime="2026-09-08">September 8, 2026</time></p>
+</header>
+<div class="layout">
+<nav class="contents" aria-label="Article contents">
+<h2>In this article</h2>
+<ol>
+<li><a href="#starting-point">The starting point</a></li><li><a href="#foundations">UX, UI &amp; HCI</a></li><li><a href="#mental-models">A clear object model</a></li><li><a href="#ai-ux">Making AI inspectable</a></li><li><a href="#lifecycle">Design → Test → Publish → Observe</a></li><li><a href="#lists">Consistent list views</a></li><li><a href="#disclosure">Progressive disclosure</a></li><li><a href="#forms">Forms that help</a></li><li><a href="#surfaces">Panels, modals &amp; pages</a></li><li><a href="#guardrails">Guardrails as policies</a></li><li><a href="#voice">Designing for voice</a></li><li><a href="#accessibility">Accessibility by default</a></li><li><a href="#practice">Putting it into practice</a></li><li><a href="#principles">Practical principles</a></li><li><a href="#references">References</a></li>
+</ol>
+</nav>
+<div class="prose">
+<section id="starting-point" aria-labelledby="starting-title">
+<span class="section-number">01 / The starting point</span>
+<h2 id="starting-title">Begin with the outcome someone needs</h2>
+<p class="lede">Working with AI-driven web applications means designing how people express intent, inspect decisions, and stay in control when software behaves unexpectedly.</p>
+<p>A writing assistant, an analytical dashboard, and a customer-service agent builder all make different demands on their users. Yet each raises similar questions: What can this system do? What information is it using? What will happen if I accept its suggestion? How do I correct a mistake?</p>
+<p>These questions become especially important when the user is configuring AI for someone else. A builder might define prompts, connect tools, and set escalation rules. A customer later experiences the result as a chat or phone call. The design must serve both the person constructing the behavior and the person affected by it.</p>
+<p>This article focuses on that builder experience. The examples concern a fictional customer-service application for agents, communication flows, prompts, and guardrails. They are design proposals to test with users; thresholds and scenarios are illustrative, not universal operating policies.</p>
+<p class="thesis">Help people move from an intended customer outcome to a working, understandable, tested, and safely deployable AI flow.</p>
+<aside class="example" aria-label="Running example"><span class="label">A running example</span><p>“When a customer asks about a late delivery, identify the order, check its status, explain the next step, and hand over to a person when necessary.”</p><p>This gives the builder a purpose. The interface can then help translate that purpose into questions, tools, conditions, and fallback behavior.</p></aside>
+</section>
+<section id="foundations" aria-labelledby="foundations-title">
+<span class="section-number">02 / Foundations</span><h2 id="foundations-title">Connect UX, UI, and human–computer interaction</h2>
+<p>User experience concerns the whole journey: understanding the product, completing work, recovering from problems, and returning later. The user interface supplies the controls and information through which that journey happens. Human–computer interaction provides a way to examine the relationship between human goals, system behavior, and feedback.</p>
+<p>Nielsen’s usability heuristics offer useful starting points: make system status visible, use familiar language, support recovery, favor recognition over memory, and keep interactions consistent. These are evaluation lenses, rather than a substitute for observing actual users. <a class="cite" href="#ref-1" aria-label="Reference 1">[1]</a></p>
+<ul>
+<li><strong>Make state explicit.</strong> Distinguish “Saved as draft” from “Published.” Show a failed save where the person is editing.</li>
+<li><strong>Use task language.</strong> “Ask for the order number” can be a better entry point than an internal node type.</li>
+<li><strong>Support recognition.</strong> Offer a variable picker with descriptions and sample values.</li>
+<li><strong>Make recovery practical.</strong> Preserve work, provide version history, and explain what a restore affects.</li>
+<li><strong>Direct attention.</strong> Use spacing, typography, and a clear primary action to show what matters next.</li>
+</ul>
+<p>For the delivery flow, ask a participant to change the handoff behavior, then explain which version customers will encounter. A polished screen that leaves that answer uncertain still has an interaction problem.</p>
+</section>
+<section id="mental-models" aria-labelledby="mental-title">
+<span class="section-number">03 / Information architecture</span><h2 id="mental-title">Give people a stable model of the product</h2>
+<p>Google’s People + AI Guidebook emphasizes helping users form appropriate mental models of AI capabilities. In a builder, this also means making relationships between configurable objects understandable. <a class="cite" href="#ref-2" aria-label="Reference 2">[2]</a></p>
+<p>Define what an agent, flow, prompt, tool, guardrail, test, and run mean in your product. Then explain ownership and reuse. A prompt embedded in one flow behaves differently from a shared prompt referenced by twenty flows.</p>
+<aside class="example"><span class="label">At the point of change</span><p><strong>Delivery response · Shared prompt</strong><br>Used by three flows. Editing creates a draft. Published flows keep their current version until an update is published.</p></aside>
+<p>The exact model will depend on the architecture. The interface should expose its real consequences: whether changes propagate, which version is active, and where a policy applies. Useful places for this information include object headers, dependency views, and publication reviews.</p>
+</section>
+<section id="ai-ux" aria-labelledby="ai-title">
+<span class="section-number">04 / Human–AI interaction</span><h2 id="ai-title">Make AI behavior inspectable and correctable</h2>
+<p>Microsoft’s Human–AI Interaction guidelines address communicating capabilities and limitations, supporting correction, and responding appropriately when AI is wrong. These concerns extend familiar usability work to systems whose behavior can vary. <a class="cite" href="#ref-3" aria-label="Reference 3">[3]</a></p>
+<p>For our delivery example, a useful execution view shows the customer input, selected flow path, tool request, tool result, policy outcome, and final response. Present recorded events as evidence. If a model generates an explanation afterward, label it as an explanation rather than treating it as a definitive account of causation.</p>
+<p>Natural-language configuration can be an effective starting point. After someone describes a refund policy, show the resulting conditions, thresholds, permissions, and actions for review. Make assumptions and unresolved inputs visible. A conversational request should produce an editable configuration that the builder can inspect.</p>
+<p>Also design the recovery path. If order lookup fails, does the agent ask again, retry, or hand over? The builder needs to choose and test that behavior before a customer encounters it.</p>
+</section>
+<section id="lifecycle" aria-labelledby="lifecycle-title">
+<span class="section-number">05 / The working loop</span><h2 id="lifecycle-title">Design → Test → Publish → Observe</h2>
+<p>A useful product structure separates four kinds of work while keeping movement between them easy. This is a proposed organizing model for the application, not a research standard. Tools such as Langflow demonstrate the value of a dedicated testing environment where builders can inspect outputs and tool use. <a class="cite" href="#ref-4" aria-label="Reference 4">[4]</a></p>
+<ol class="cycle" aria-label="Four stages of the AI flow lifecycle">
+<li><strong>1. Design</strong><span>Define the desired outcome, inputs, tool access, policies, and fallback paths. Make the draft state visible.</span></li>
+<li><strong>2. Test</strong><span>Exercise representative and difficult scenarios. Compare observed behavior with explicit expectations.</span></li>
+<li><strong>3. Publish</strong><span>Review a version’s changes, test evidence, dependencies, and destination before making it live.</span></li>
+<li><strong>4. Observe</strong><span>Inspect real outcomes, failures, and handoffs. Turn useful findings into the next set of tests.</span></li>
+</ol>
+<p>Test more than a successful delivery lookup. Include a missing order number, an unavailable service, an ambiguous request, an attempted policy bypass, and a customer asking for a person. Repeat important scenarios where output variability matters.</p>
+<p>A publication summary should identify the exact version tested. “Six tests passed” means little without their scope, results, and remaining gaps. If a prompt or dependency changes afterward, indicate that the earlier evidence may no longer describe the candidate release.</p>
+<p>Observation needs meaningful definitions. A conversation ending is not necessarily a resolved issue. Examine task completion alongside repeat contacts, handoff quality, latency, and reviewed failures. Clearly distinguish measured events from inferred outcomes. A rollback can restore configuration, but cannot undo an already issued refund or customer message.</p>
+</section>
+<section id="lists" aria-labelledby="lists-title">
+<span class="section-number">06 / Product coherence</span><h2 id="lists-title">Standardize the way list views behave</h2>
+<p>Lists of agents, flows, prompts, and guardrails are recurring entry points. Carbon’s data-table guidance provides an established reference for organizing search, selection, row actions, batch actions, and pagination. <a class="cite" href="#ref-5" aria-label="Reference 5">[5]</a></p>
+<p>Create one resource-list specification. Define title and creation-action placement; search, filter, and sort behavior; selection; row navigation; overflow actions; status language; and loading, empty, and error states. Keep these conventions stable while allowing useful differences in columns.</p>
+<div class="table-wrap" role="region" aria-label="Example flow list" tabindex="0"><table><caption>Example: the same status vocabulary across resource lists</caption><thead><tr><th scope="col">Flow</th><th scope="col">Publication</th><th scope="col">Health</th><th scope="col">Updated</th></tr></thead><tbody><tr><th scope="row">Order tracking</th><td>Published · v17</td><td>Lookup failures</td><td>Today</td></tr><tr><th scope="row">Returns assistant</th><td>Draft</td><td>Not tested</td><td>Yesterday</td></tr><tr><th scope="row">Invoice questions</th><td>Published · v8</td><td>No issues detected</td><td>3 days ago</td></tr></tbody></table></div>
+<p>Publication and operational health are separate dimensions: a published flow can be failing. Keep explicit text alongside any status color. Prefer a clear name link for navigation, leaving selection and row actions as separate controls.</p>
+<p>Preserve search, filters, and position when someone returns from a detail page. Explain whether “Select all” means the visible page or every matching result. On narrow screens, retain the fields needed to identify the resource and its state; provide deliberate access to the remaining detail.</p>
+<h3>Give different empty states different next steps</h3>
+<p>“You haven’t created a flow yet” can lead to creation or a template. “No flows match these filters” should offer a way to clear them. “Flows couldn’t be loaded” needs recovery rather than a misleading empty list. Carbon’s empty-state guidance is a useful reference for these distinctions. <a class="cite" href="#ref-6" aria-label="Reference 6">[6]</a></p>
+</section>
+<section id="disclosure" aria-labelledby="disclosure-title">
+<span class="section-number">07 / Managing complexity</span><h2 id="disclosure-title">Reveal detail when it becomes useful</h2>
+<p>Progressive disclosure presents the most relevant options first and makes specialized controls available when needed. It helps manage complexity without removing capability. Decide what appears first through task research rather than an assumed universal ratio of basic to advanced features. <a class="cite" href="#ref-7" aria-label="Reference 7">[7]</a></p>
+<p>A new guardrail might initially ask what it should prevent, where it applies, and what should happen when triggered. Evaluation settings can sit in a clearly named secondary section. Keep consequential behavior visible: whether an unavailable check permits or blocks an action should never be concealed as an incidental technical detail.</p>
+<p>Apply the same thinking to flow editing. A short sequence can work well as an ordered set of steps. A graph becomes useful when branching and relationships need spatial inspection. If both views exist, preserve the same underlying behavior and explain which structures the simpler view can represent.</p>
+<p>Use explicit section names such as “Retry and timeout behavior.” A single “Advanced” drawer can become a second confusing form if everything accumulates inside it.</p>
+</section>
+<section id="forms" aria-labelledby="forms-title">
+<span class="section-number">08 / Input design</span><h2 id="forms-title">Make forms support the decision</h2>
+<p>W3C’s forms guidance recommends labels, instructions, meaningful grouping, validation, and useful feedback. Placeholders cannot carry the full responsibility of labels because they disappear during input. <a class="cite" href="#ref-8" aria-label="Reference 8">[8]</a></p>
+<p>For a prompt editor, begin with purpose and instructions. Place variables nearby, with names, types, and sample values. Group model settings and response constraints into understandable sections. Show defaults and explain their effects where they influence behavior.</p>
+<p>Validation should describe a fix: “Choose a destination for the human handoff” is actionable. Retain the person’s input, associate the message with the relevant control, and provide a navigable error summary for longer forms. Avoid disruptive validation while someone is still composing a value.</p>
+<p>Be precise about persistence. An autosave indicator should distinguish saving, saved, and failed states. Keep publishing a separate, understandable operation. For collaborative editing, surface conflicts and provide a way to recover competing changes.</p>
+</section>
+<section id="surfaces" aria-labelledby="surfaces-title">
+<span class="section-number">09 / Interaction surfaces</span><h2 id="surfaces-title">Choose the space the task needs</h2>
+<p>Use a shared decision rule for where work happens. The following is a practical starting point to validate against task length, screen size, and user expectations.</p>
+<div class="table-wrap" role="region" aria-label="Choosing an interaction surface" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Good fit</th><th scope="col">Builder example</th></tr></thead><tbody><tr><th scope="row">Inline</th><td>A small local edit</td><td>Rename a flow</td></tr><tr><th scope="row">Popover</th><td>A brief contextual choice</td><td>Choose a sort order</td></tr><tr><th scope="row">Side panel</th><td>Focused work beside useful parent context</td><td>Edit one flow step</td></tr><tr><th scope="row">Modal dialog</th><td>A bounded decision requiring attention</td><td>Review deletion consequences</td></tr><tr><th scope="row">Full page</th><td>Substantial, resumable configuration</td><td>Configure an agent</td></tr><tr><th scope="row">Canvas</th><td>Inspecting complex relationships</td><td>Edit branching orchestration</td></tr></tbody></table></div>
+<p>When a panel becomes the primary workspace on mobile, give it adequate space and a clear route back. Preserve unfinished work when moving between surfaces. Avoid making a long configuration journey depend on a stack of dialogs.</p>
+<p>A modal also creates accessibility obligations. WAI’s dialog pattern describes moving focus inside, containing the keyboard focus sequence, offering dismissal, and returning focus appropriately when the dialog closes. A side panel needs an explicit decision about whether it is modal or leaves the parent interactive. <a class="cite" href="#ref-9" aria-label="Reference 9">[9]</a></p>
+</section>
+<section id="guardrails" aria-labelledby="guardrails-title">
+<span class="section-number">10 / Boundaries and control</span><h2 id="guardrails-title">Present guardrails as understandable policies</h2>
+<p>A builder should be able to read a policy and predict its consequences. OpenAI’s practical guide to agents discusses layered guardrails and human intervention; these are useful foundations for a product that lets users configure agent behavior. <a class="cite" href="#ref-10" aria-label="Reference 10">[10]</a></p>
+<aside class="example"><span class="label">Illustrative policy summary</span><dl class="policy"><dt>Protect</dt><dd>Refunds above €500 require human approval.</dd><dt>When</dt><dd>Before the refund action executes.</dd><dt>Scope</dt><dd>Every refund tool call in this flow.</dd><dt>Outcome</dt><dd>Pause and route the request to a support agent.</dd><dt>On failure</dt><dd>Do not issue the refund; request human review.</dd></dl></aside>
+<p>Show whether the policy is inherited or local, what can override it, and which version is active. The approval screen should expose the proposed action, relevant evidence, and the consequences of approval or rejection.</p>
+<p>A written instruction in a prompt does not establish an enforced permission boundary. The product should distinguish advisory behavior from checks implemented around the action itself. Let builders test both a violation and an unavailable check.</p>
+<p>In monitoring, count triggers, blocks, escalations, and reviewed mistakes separately. Label suspected false positives until they have been assessed. Guardrail metrics should help people improve a policy, not imply that a high block count automatically means success.</p>
+</section>
+<section id="voice" aria-labelledby="voice-title">
+<span class="section-number">11 / Conversation over time</span><h2 id="voice-title">Design voice as a timed interaction</h2>
+<p>Chat and voice can share intent, policies, and handoff logic. Voice additionally requires deliberate choices about listening, speaking, silence, interruption, recognition errors, and delays. The following recommendations extend the article’s interaction principles to that channel.</p>
+<p>Write prompts for listening: short turns, a manageable question, and an explicit next step. Let a customer interrupt. Decide how long to wait, what to say after silence, and how to confirm information when a recognition error would change the outcome.</p>
+<aside class="example"><span class="label">Example: waiting for order lookup</span><p>“I’m checking your delivery now.”</p><p>If the lookup fails: “I couldn’t retrieve the delivery status. I can connect you to a colleague.”</p></aside>
+<p>A voice tester should combine playback and a transcript with a timeline of speech, interruptions, tool activity, and response onset. That helps builders distinguish slow lookup from slow turn detection. Test background noise, different accents, corrections, silence, and interruptions during a long response.</p>
+<p>Make handoff continuity part of the design: what context reaches the next person, what the customer hears while waiting, and what happens if nobody is available. Provide a text alternative where possible and make recording state and controls understandable.</p>
+</section>
+<section id="accessibility" aria-labelledby="access-title">
+<span class="section-number">12 / Inclusive interaction</span><h2 id="access-title">Build accessibility into the shared components</h2>
+<p>WCAG 2.2 provides testable accessibility criteria. Relevant concerns include keyboard access, visible and unobscured focus, sufficient contrast, understandable inputs, alternatives to dragging, and adequately sized targets. Treat the standard as a foundation for evaluation throughout development. <a class="cite" href="#ref-11" aria-label="Reference 11">[11]</a></p>
+<p>For an agent builder, that means offering ways to add, connect, and reorder steps without dragging. Provide meaningful control names, structural headings, and text equivalents for status. A canvas may need a complementary structured view to make relationships navigable.</p>
+<p>Check tables, menus, and dialogs using keyboard navigation and assistive technology. Test zoom and narrow screens. Announce important asynchronous results without repeatedly interrupting someone as a generated response streams. Put these behaviors in component acceptance criteria so improvements carry across the product.</p>
+</section>
+<section id="practice" aria-labelledby="practice-title">
+<span class="section-number">13 / Making progress</span><h2 id="practice-title">Improve one complete journey at a time</h2>
+<p>Start with a journey such as finding the delivery flow, editing a fallback, testing it, and publishing the change. Inventory the screens and states involved. Separate vocabulary and ownership problems from interaction inconsistencies and visual differences; each needs a different kind of fix.</p>
+<p>Use that journey to establish reusable list, editor, validation, and publication patterns. Record spacing, type, color, and component states in the design system, along with behavior and content rules. Allow documented exceptions when a task genuinely needs a different treatment.</p>
+<p>Then observe representative builders using the result. Can they find the right resource, predict the effect of a change, recover from an error, and identify the live version? Measure task success, mistakes, recovery, and time to a correctly tested flow. Use that evidence to decide what to simplify next.</p>
+</section>
+<section id="principles" class="principles" aria-labelledby="principles-title">
+<h2 id="principles-title">Eight principles to keep close</h2>
+<ol><li><strong>Start with the customer outcome.</strong> Organize configuration around the job to be done.</li><li><strong>Make state and scope visible.</strong> Show what is saved, tested, live, and affected.</li><li><strong>Keep common interactions consistent.</strong> Reuse behavior as carefully as visual styling.</li><li><strong>Reveal complexity deliberately.</strong> Keep consequential decisions within reach.</li><li><strong>Make generated behavior reviewable.</strong> Expose editable structure and recorded evidence.</li><li><strong>Make testing part of building.</strong> Include failure paths and version-specific results.</li><li><strong>Design correction and handoff.</strong> Give people workable recovery routes.</li><li><strong>Include everyone from the start.</strong> Build accessible interaction into shared components.</li></ol>
+</section>
+<section id="references" class="references" aria-labelledby="references-title">
+<h2 id="references-title">References &amp; further reading</h2>
+<p class="note">Research and design guidance underpin the discussion; the fictional examples and proposed product patterns are an applied synthesis. Source links checked September 8, 2026. These readable links replace the citation markers from the original research conversation.</p>
+<ol>
+<li id="ref-1"><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Jakob Nielsen — 10 Usability Heuristics for User Interface Design</a><small>Nielsen Norman Group. Foundations for feedback, consistency, recognition, and recovery.</small></li>
+<li id="ref-2"><a href="https://pair.withgoogle.com/chapter/mental-models/">Google PAIR — Mental Models</a><small>People + AI Guidebook. Helping people understand AI capabilities and behavior.</small></li>
+<li id="ref-3"><a href="https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/">Amershi et al. — Guidelines for Human–AI Interaction</a><small>CHI 2019 / Microsoft Research. Research-based guidance across initial use, ongoing interaction, errors, and change.</small></li>
+<li id="ref-4"><a href="https://docs.langflow.org/concepts-playground">Langflow — Test flows in the Playground</a><small>A product example of testing flows and inspecting tool activity. Product documentation can change.</small></li>
+<li id="ref-5"><a href="https://carbondesignsystem.com/components/data-table/usage/">IBM Carbon Design System — Data table: Usage</a><small>Reference patterns for resource tables and their controls.</small></li>
+<li id="ref-6"><a href="https://carbondesignsystem.com/patterns/empty-states-pattern/">IBM Carbon Design System — Empty states</a><small>Guidance for giving missing-data states useful context and next steps.</small></li>
+<li id="ref-7"><a href="https://www.nngroup.com/articles/progressive-disclosure/">Jakob Nielsen — Progressive Disclosure</a><small>Nielsen Norman Group. Layering access to specialized functionality.</small></li>
+<li id="ref-8"><a href="https://www.w3.org/WAI/tutorials/forms/">W3C WAI — Forms Tutorial</a><small>Accessible labels, instructions, grouping, validation, and feedback.</small></li>
+<li id="ref-9"><a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">W3C WAI — Dialog (Modal) Pattern</a><small>ARIA Authoring Practices Guide. Keyboard and focus behavior for modal dialogs.</small></li>
+<li id="ref-10"><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">OpenAI — A practical guide to building agents (PDF)</a><small>Guardrails, orchestration, and human intervention.</small></li>
+<li id="ref-11"><a href="https://www.w3.org/TR/WCAG22/">W3C — Web Content Accessibility Guidelines (WCAG) 2.2</a><small>The normative accessibility recommendation; consult individual criteria for requirements and exceptions.</small></li>
+</ol>
+</section>
+</div>
+</div>
+</article>
+</main>
+<footer class="footer"><span>Erik Pantzar · Design notes</span><a href="#article">Back to top ↑</a></footer>
 </body>
 </html>
