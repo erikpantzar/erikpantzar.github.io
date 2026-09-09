@@ -175,10 +175,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       font-size: 8px;
       line-height: 1;
       color: var(--dim);
-      background: var(--bg);
-      border: 2px solid var(--fg);
       padding: 8px 10px;
-      box-shadow: 3px 3px 0 var(--fg);
     }
 :where(.landing-page) #weather svg {
       width: 16px;
