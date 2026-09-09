@@ -163,6 +163,40 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       letter-spacing: 3px;
       text-align: left;
     }
+:where(.landing-page) #weather {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      z-index: 11;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      line-height: 1;
+      color: var(--dim);
+      background: var(--bg);
+      border: 2px solid var(--fg);
+      padding: 8px 10px;
+      box-shadow: 3px 3px 0 var(--fg);
+    }
+:where(.landing-page) #weather svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      color: var(--fg);
+      stroke: currentColor;
+      fill: none;
+    }
+:where(.landing-page) #weather-temp {
+      color: var(--fg);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    @media (max-width: 480px) {
+:where(.landing-page) #weather { top: 10px; left: 10px; font-size: 7px; padding: 6px 8px; }
+:where(.landing-page) #weather svg { width: 13px; height: 13px; }
+    }
 :where(.landing-page) main {
       position: relative;
       flex: 1;
@@ -263,6 +297,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
     @media (prefers-reduced-motion: reduce) {
 :where(.landing-page) h1::after { animation: none; }
 :where(.landing-page) .logos li { animation: none; opacity: 1; }
+:where(.landing-page) #weather-temp { transition: none; }
     }
 
     /* Phones: shrink marks and tighten gaps so the row wraps cleanly
