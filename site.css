@@ -163,19 +163,27 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       letter-spacing: 3px;
       text-align: left;
     }
-:where(.landing-page) #weather {
+:where(.landing-page) .top-bar {
       position: fixed;
-      top: 14px;
-      left: 14px;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 11;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px clamp(16px, 4vw, 48px);
+    }
+:where(.landing-page) #weather {
+      display: flex;
+      align-items: center;
       gap: 8px;
+      min-height: 44px;
       font-family: 'Press Start 2P', monospace;
       font-size: 8px;
       line-height: 1;
       color: var(--dim);
-      padding: 8px 10px;
     }
 :where(.landing-page) #weather svg {
       width: 16px;
@@ -191,8 +199,10 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       transition: opacity 0.4s ease;
     }
     @media (max-width: 480px) {
-:where(.landing-page) #weather { top: 10px; left: 10px; font-size: 7px; padding: 6px 8px; }
+:where(.landing-page) .top-bar { padding: 4px 12px; }
+:where(.landing-page) #weather { font-size: 7px; }
 :where(.landing-page) #weather svg { width: 13px; height: 13px; }
+:where(.landing-page) .site-nav a { font-size: 8px; }
     }
 :where(.landing-page) main {
       position: relative;
@@ -237,8 +247,8 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       padding-bottom: 4px;
     }
 :where(.landing-page) nav a:hover { color: var(--dim); border-color: var(--dim); }
-:where(.landing-page) .site-nav { position: absolute; top: 18px; right: clamp(16px, 4vw, 48px); z-index: 2; }
-:where(.landing-page) .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 2px; border: 0; gap: 8px; line-height: 1.7; text-align: right; max-width: calc(100vw - 32px); }
+:where(.landing-page) .site-nav { display: flex; }
+:where(.landing-page) .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 0; border: 0; gap: 8px; line-height: 1.7; text-align: right; }
 :where(.landing-page) .site-nav a:focus-visible { outline: 2px solid var(--fg); outline-offset: 5px; }
 :where(.landing-page) .worked {
       position: sticky;
