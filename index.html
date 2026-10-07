@@ -173,7 +173,7 @@
       }
       el.textContent = rows.join("\n");
     }
-    return { frame: ms => render(ms / 1000 * 2.2), still: () => render(0.9) };
+    return { frame: ms => render(ms / 1000 * 2.2) };
   })();
 
   // ── piece 2: spinning torus — z-buffer + luminance ramp ──
@@ -204,7 +204,7 @@
       for (let y = 0; y < H; y++) rows.push(b.slice(y * W, y * W + W).join(""));
       el.textContent = rows.join("\n");
     }
-    return { frame: ms => render(ms / 1000 * 0.9, ms / 1000 * 0.5), still: () => render(1.0, 0.4) };
+    return { frame: ms => render(ms / 1000 * 0.9, ms / 1000 * 0.5) };
   })();
 
   // ── piece 3: rotating planet with tilted dot ring and orbiting moon ──
@@ -253,7 +253,7 @@
       }
       el.textContent = g.map(r => r.join("")).join("\n");
     }
-    return { frame: ms => render(ms / 1000 * 1.4), still: () => render(0.6) };
+    return { frame: ms => render(ms / 1000 * 1.4) };
   })();
 
   const pieces = [ball, donut, orbit];
