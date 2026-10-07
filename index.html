@@ -259,10 +259,6 @@
   const pieces = [ball, donut, orbit];
   const piece = pieces[Math.floor(Math.random() * pieces.length)];
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    piece.still();
-    return;
-  }
   function tick(ms) {
     piece.frame(ms);
     requestAnimationFrame(tick);

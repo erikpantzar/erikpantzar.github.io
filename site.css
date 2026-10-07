@@ -301,12 +301,6 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-:where(.landing-page) h1::after { animation: none; }
-:where(.landing-page) .logos li { animation: none; opacity: 1; }
-:where(.landing-page) #weather-temp { transition: none; }
-    }
-
     /* Phones: shrink marks and tighten gaps so the row wraps cleanly
        instead of crowding the viewport. */
     @media (max-width: 640px) {
