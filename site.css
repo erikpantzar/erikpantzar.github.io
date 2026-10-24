@@ -187,7 +187,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
       gap: 8px;
       min-height: 44px;
       font-family: 'Press Start 2P', monospace;
-      font-size: 8px;
+      font-size: 9px;
       line-height: 1;
       color: var(--dim);
     }
@@ -206,7 +206,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
     }
     @media (max-width: 480px) {
 :where(.landing-page) .top-bar { padding: 4px 12px; }
-:where(.landing-page) #weather { font-size: 7px; }
+:where(.landing-page) #weather { font-size: 8px; }
 :where(.landing-page) #weather svg { width: 13px; height: 13px; }
 :where(.landing-page) .site-nav a { font-size: 8px; }
     }
@@ -329,12 +329,11 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
 /* Shared blog identity; article typography stays optimized for reading. */
 .masthead {
   display: block;
-  max-width: 1120px;
-  margin: auto;
-  padding: 24px;
+  max-width: none;
+  padding: 8px clamp(16px, 4vw, 48px);
   border-bottom: 1px solid var(--line);
   color: var(--fg, var(--ink));
-  font: 10px/1.8 'Press Start 2P', monospace;
+  font: 9px/1.8 'Press Start 2P', monospace;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -356,7 +355,7 @@ html.landing-page { background: var(--bg); color: var(--fg); overflow-x: hidden;
 .masthead a:hover { text-decoration: underline; text-underline-offset: 6px; }
 
 @media (max-width: 480px) {
-  .masthead { padding: 16px 20px; font-size: 9px; }
+  .masthead { padding: 4px 12px; font-size: 8px; }
   .masthead-row { gap: 16px; }
 }
 @media print { .masthead { display: none; } }
