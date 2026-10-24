@@ -72,6 +72,12 @@ html.article-page {scroll-padding-top:2rem}
 :where(.article-page) .footer {max-width:1200px;margin:1rem auto 0;border-top:1px solid var(--line);padding:1.5rem 2.5rem 2.5rem;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.8rem}
 :where(.article-page) strong {font-weight:700}
 :where(.article-page) ::selection {background:#d2e2bd}
+    @media (prefers-color-scheme: dark){
+html.article-page {--paper:#121614;--surface:#1a1f1d;--ink:#e3e8e2;--muted:#a3b3ab;--accent:#7cc4a8;--line:#2f3a35;--tint:#1f2a25;--warm:#2a241b}
+:where(.article-page) .principles {background:var(--tint);color:var(--ink);border:1px solid var(--line)}
+:where(.article-page) .principles h2 {color:var(--ink)}
+:where(.article-page) .principles strong {color:var(--accent)}
+:where(.article-page) ::selection {background:#2f4a3a}}
     @media(max-width:1000px){
 :where(.article-page) .layout {grid-template-columns:170px minmax(0,1fr);gap:2.2rem}
 :where(.article-page) .hero {padding-top:3rem}}
